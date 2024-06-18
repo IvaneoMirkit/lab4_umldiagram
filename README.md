@@ -1,4 +1,5 @@
 ```mermaid
+##Бронирование намеров в отеле 
 classDiagram
 class Hotel {
   +String Name
