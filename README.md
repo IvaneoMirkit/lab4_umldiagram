@@ -177,7 +177,7 @@ TravelAgency <|-- Tour
 Customer <|-- Booking
 Booking <|-- TourOption
 ```
-# UML - Создание сайта автомагазина
+# UML - Создание сайта автомагазина:
 ```mermaid
 classDiagram
 class AutomobileStore {
@@ -221,6 +221,277 @@ OrderItem .. Car
 Order .. Customer
 Order ..> OrderItem
 AutomobileStore <|-- Car
+Customer <|-- Order
+Order <|-- OrderItem
+```
+# UML - Оптовая закупка овощей из фермы на склад магазина:
+```mermaid
+class Farm {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Vegetable {
+  +String Name
+  +String Description
+  +Decimal Price
+}
+
+class Store {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Warehouse {
+  +String Address
+  +Int Capacity
+}
+
+class PurchaseOrder {
+  +Int ID
+  +Store Store
+  +Farm Farm
+  +Vegetable Vegetable
+  +Int Quantity
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+}
+
+class OrderItem {
+  +Int ID
+  +Vegetable Vegetable
+  +Int Quantity
+}
+
+OrderItem .. Vegetable
+PurchaseOrder .. Store
+PurchaseOrder .. Farm
+PurchaseOrder ..> OrderItem
+Farm <|-- Vegetable
+Store <|-- PurchaseOrder
+PurchaseOrder <|-- OrderItem
+Store <|-- Warehouse
+```
+# UML - Заказ шкафа в квартиру с необходимостью вызова замерщика:
+```mermaid
+class FurnitureStore {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Wardrobe {
+  +String Model
+  +String Description
+  +Decimal Price
+}
+
+class Measurer {
+  +String Name
+  +String Phone
+  +String Address
+}
+
+class Customer {
+  +String Name
+  +String Phone
+  +String Address
+}
+
+class Order {
+  +Int ID
+  +Customer Customer
+  +Wardrobe Wardrobe
+  +Measurer Measurer
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+  +String DeliveryAddress
+}
+
+class OrderItem {
+  +Int ID
+  +Wardrobe Wardrobe
+  +Int Quantity
+}
+
+OrderItem .. Wardrobe
+Order .. Customer
+Order ..> OrderItem
+FurnitureStore <|-- Wardrobe
+Customer <|-- Order
+Order <|-- OrderItem
+Measurer <|-- Order
+```
+# UML - Заказ продуктов в магазине через мобильное приложение:
+```mermaid
+class Store {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Product {
+  +String Name
+  +String Description
+  +Decimal Price
+}
+
+class Customer {
+  +String Name
+  +String Phone
+  +String Address
+}
+
+class Order {
+  +Int ID
+  +Customer Customer
+  +OrderItem Product
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+  +String DeliveryAddress
+}
+
+class OrderItem {
+  +Int ID
+  +Product Product
+  +Int Quantity
+}
+
+OrderItem .. Product
+Order .. Customer
+Order ..> OrderItem
+Store <|-- Product
+Customer <|-- Order
+Order <|-- OrderItem
+```
+# UML - Оптовая закупка компьютеров в университет:
+```mermaid
+class University {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Computer {
+  +String Model
+  +String Specification
+  +Decimal Price
+}
+
+class Vendor {
+  +String Name
+  +String Phone
+  +String Address
+}
+
+class PurchaseOrder {
+  +Int ID
+  +University University
+  +Vendor Vendor
+  +Computer Computer
+  +Int Quantity
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+}
+
+PurchaseOrder .. University
+PurchaseOrder .. Vendor
+PurchaseOrder ..> Computer
+University <|-- PurchaseOrder
+Vendor <|-- PurchaseOrder
+PurchaseOrder <|-- Computer
+```
+# UML - Прохождение онлай-курсов по программированию:
+```mermaid
+class Course {
+  +String Name
+  +String Description
+  +Decimal Price
+  +String Level
+  +String Language
+}
+
+class Student {
+  +String Name
+  +String Email
+  +String Address
+}
+
+class Enrollment {
+  +Int ID
+  +Student Student
+  +Course Course
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+}
+
+class CourseProgress {
+  +Int ID
+  +Enrollment Enrollment
+  +Int ProgressPercentage
+  +DateTime LastAccessed
+}
+
+CourseProgress .. Enrollment
+Enrollment .. Student
+Enrollment ..> CourseProgress
+Course <|-- Enrollment
+Student <|-- Enrollment
+Enrollment <|-- CourseProgress
+```
+# UML - Заказ и доставка еды из ресторана:
+```mermaid
+class Restaurant {
+  +String Name
+  +String Address
+  +String Phone
+  +String Website
+}
+
+class Menu {
+  +String Dish
+  +String Description
+  +Decimal Price
+}
+
+class Customer {
+  +String Name
+  +String Phone
+  +String Address
+}
+
+class Order {
+  +Int ID
+  +Customer Customer
+  +OrderItem Dish
+  +String PaymentMethod
+  +String Statuses
+  +DateTime Date/Time
+  +String DeliveryAddress
+}
+
+class OrderItem {
+  +Int ID
+  +Menu Dish
+  +Int Quantity
+}
+
+OrderItem .. Menu
+Order .. Customer
+Order ..> OrderItem
+Restaurant <|-- Menu
 Customer <|-- Order
 Order <|-- OrderItem
 ```
