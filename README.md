@@ -1,4 +1,4 @@
-Бронирование намеров в отеле 
+                                                                               ##запись к врачу через мобильное приложение:##
 ```mermaid
 classDiagram
 class Hotel {
@@ -41,6 +41,7 @@ Hotel <|-- Room
 Guest <|-- Booking
 Booking ..> Room
 ```
+Заказ такси через мобильое приложение
 ```mermaid
 classDiagram
 class TaxiCompany {
