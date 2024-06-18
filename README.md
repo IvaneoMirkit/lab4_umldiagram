@@ -1,4 +1,4 @@
-```mermide
+```mermaid
 classDiagram
 class Hotel {
   +String Name
