@@ -1,5 +1,5 @@
-```mermaid
 ##Бронирование намеров в отеле 
+```mermaid
 classDiagram
 class Hotel {
   +String Name
