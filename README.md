@@ -226,6 +226,7 @@ Order <|-- OrderItem
 ```
 # UML - Оптовая закупка овощей из фермы на склад магазина:
 ```mermaid
+classDiagram
 class Farm {
   +String Name
   +String Address
@@ -279,6 +280,7 @@ Store <|-- Warehouse
 ```
 # UML - Заказ шкафа в квартиру с необходимостью вызова замерщика:
 ```mermaid
+classDiagram
 class FurnitureStore {
   +String Name
   +String Address
@@ -331,6 +333,7 @@ Measurer <|-- Order
 ```
 # UML - Заказ продуктов в магазине через мобильное приложение:
 ```mermaid
+classDiagram
 class Store {
   +String Name
   +String Address
@@ -375,6 +378,7 @@ Order <|-- OrderItem
 ```
 # UML - Оптовая закупка компьютеров в университет:
 ```mermaid
+classDiagram
 class University {
   +String Name
   +String Address
@@ -414,6 +418,7 @@ PurchaseOrder <|-- Computer
 ```
 # UML - Прохождение онлай-курсов по программированию:
 ```mermaid
+classDiagram
 class Course {
   +String Name
   +String Description
@@ -453,6 +458,7 @@ Enrollment <|-- CourseProgress
 ```
 # UML - Заказ и доставка еды из ресторана:
 ```mermaid
+classDiagram
 class Restaurant {
   +String Name
   +String Address
